@@ -1,3 +1,5 @@
 node_modules
 
 brain-games: node bin/brain-games.js
+
+babel.config.js
