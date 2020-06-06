@@ -1,10 +1,9 @@
 #!/usr/bin/env node
 import getName from '../src/cli.js';
 
-const greeting = (user) => {
-    console.log('Welcome to the Brain Games');
-    user = getName();
-    console.log(`Hello, ${user}!`);
+const greeting = () => {
+  console.log('Welcome to the Brain Games');
+  const name = getName();
+  console.log(`Hello, ${name}!`);
 };
-
 greeting();
