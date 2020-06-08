@@ -3,7 +3,6 @@
 import readlineSync from 'readline-sync';
 
 export default (name) => {
-// const evenOrNotEven = (name) => {
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
   for (let i = 0; i < 3; i += 1) {
     const num = Math.ceil(Math.random() * (100));
