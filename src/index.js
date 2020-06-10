@@ -15,13 +15,12 @@ const victoryGame = () => console.log(`Congratulations, ${userName}!`);
 const answer = () => readlineSync.question('Your answer: ');
 
 const falseAnswer = (userAnswer, trueAnswer) => {
-  console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${trueAnswer}".
+  console.log(
+    `"${userAnswer}" is wrong answer ;(. Correct answer was "${trueAnswer}".
   Let's try again, ${userName}!`);
 };
 
-const questionNumber = (num) => console.log(`Question: ${num}`);
-
-const questionExpression = (num1, num2, operator) => {
+const question = (num1, num2 = '', operator = '') => {
   console.log(`Question: ${num1} ${operator} ${num2}`);
 };
 
@@ -31,6 +30,5 @@ const random = (min, max) => Math.ceil(Math.random() * (max - min) + min);
 
 export {
   getName, userName, greeting, victoryGame, answer,
-  falseAnswer, questionNumber, correctAnswer, random,
-  questionExpression,
+  falseAnswer, correctAnswer, random, question,
 };

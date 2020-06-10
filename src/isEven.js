@@ -1,5 +1,5 @@
 import {
-  victoryGame, falseAnswer, answer, questionNumber, correctAnswer, random,
+  victoryGame, falseAnswer, answer, question, correctAnswer, random,
 } from './index.js';
 
 const evenOrNotEven = (name) => {
@@ -7,7 +7,7 @@ const evenOrNotEven = (name) => {
   for (let i = 0; i < 3; i += 1) {
     const num = random(0, 100);
     const isEven = num % 2 === 0 ? 'yes' : 'no';
-    questionNumber(num);
+    question(num);
     const yourAnswer = answer();
     if (isEven === yourAnswer) {
       correctAnswer();

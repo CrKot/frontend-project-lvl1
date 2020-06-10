@@ -1,6 +1,6 @@
 import {
   victoryGame, answer,
-  falseAnswer, questionExpression, correctAnswer, random,
+  falseAnswer, question, correctAnswer, random,
 } from './index.js';
 
 const operatorArrays = ['+', '-', '*'];
@@ -35,7 +35,7 @@ const calculate = (name) => {
     const num2 = random(0, 30);
     const operator = randomOperator();
     const resultExpression = calculateExpression(num1, num2, operator);
-    questionExpression(num1, num2, operator);
+    question(num1, num2, operator);
     const yourAnswer = answer();
     if (+yourAnswer === +resultExpression) {
       correctAnswer();
