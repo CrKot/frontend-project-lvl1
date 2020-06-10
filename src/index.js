@@ -17,7 +17,8 @@ const answer = () => readlineSync.question('Your answer: ');
 const falseAnswer = (userAnswer, trueAnswer) => {
   console.log(
     `"${userAnswer}" is wrong answer ;(. Correct answer was "${trueAnswer}".
-  Let's try again, ${userName}!`);
+  Let's try again, ${userName}!`,
+  );
 };
 
 const question = (num1, num2 = '', operator = '') => {
