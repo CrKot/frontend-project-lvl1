@@ -1,6 +1,6 @@
-<a href="https://codeclimate.com/github/codeclimate/codeclimate/maintainability"><img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability" /></a>
+[![Maintainability](https://api.codeclimate.com/v1/badges/1e427ead1e43dc576dbe/maintainability)](https://codeclimate.com/github/CrKot/frontend-project-lvl1/maintainability)
 
-[![Test Coverage](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/test_coverage)](https://codeclimate.com/github/codeclimate/codeclimate/test_coverage)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/1e427ead1e43dc576dbe/test_coverage)](https://codeclimate.com/github/CrKot/frontend-project-lvl1/test_coverage)
 
 ![Node CI](https://github.com/CrKot/frontend-project-lvl1/workflows/Node%20CI/badge.svg)
 
