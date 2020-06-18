@@ -29,13 +29,14 @@ const finishTheProgression = () => {
     if (+yourAnswer === +invisiblNumber) {
       console.log('Correct!');
     } else {
-      return console.log(
+      console.log(
         `"${yourAnswer}" is wrong answer ;(. Correct answer was "${invisiblNumber}".
               Let's try again, ${userName}!`,
       );
+      break;
     }
   }
-  return console.log(`Congratulations, ${userName}!`);
+  console.log(`Congratulations, ${userName}!`);
 };
 
 export default finishTheProgression;

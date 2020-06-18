@@ -26,13 +26,14 @@ const gcd = () => {
     if (+yourAnswer === +commonDivisor) {
       console.log('Correct!');
     } else {
-      return console.log(
+      console.log(
         `"${yourAnswer}" is wrong answer ;(. Correct answer was "${commonDivisor}".
           Let's try again, ${userName}!`,
       );
+      break;
     }
   }
-  return console.log(`Congratulations, ${userName}!`);
+  console.log(`Congratulations, ${userName}!`);
 };
 
 export default gcd;
