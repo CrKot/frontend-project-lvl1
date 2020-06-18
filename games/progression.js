@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 
 import {
-  userName, random,
+  userName, random, falseAnswer,
 } from '../src/index.js';
 
 const randomArithmeticProgression = () => {
@@ -29,11 +29,7 @@ const finishTheProgression = () => {
     if (+yourAnswer === +invisiblNumber) {
       console.log('Correct!');
     } else {
-      console.log(
-        `"${yourAnswer}" is wrong answer ;(. Correct answer was "${invisiblNumber}".
-              Let's try again, ${userName}!`,
-      );
-      break;
+      return falseAnswer(yourAnswer, invisiblNumber);
     }
   }
   console.log(`Congratulations, ${userName}!`);

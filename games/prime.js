@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 
 import {
-  userName, random,
+  userName, random, falseAnswer,
 } from '../src/index.js';
 
 const isPrimeNumber = (num) => {
@@ -23,11 +23,7 @@ const prime = () => {
     if (yourAnswer === isPrime) {
       console.log('Correct!');
     } else {
-      console.log(
-        `"${yourAnswer}" is wrong answer ;(. Correct answer was "${isPrime}".
-              Let's try again, ${userName}!`,
-      );
-      break;
+      return falseAnswer(yourAnswer, isPrime);
     }
   }
   console.log(`Congratulations, ${userName}!`);

@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 
 import {
-  random, userName,
+  random, userName, falseAnswer,
 } from '../src/index.js';
 
 const evenOrNotEven = () => {
@@ -14,11 +14,7 @@ const evenOrNotEven = () => {
     if (isEven === yourAnswer) {
       console.log('Correct!');
     } else {
-      console.log(
-        `"${yourAnswer}" is wrong answer ;(. Correct answer was "${isEven}".
-          Let's try again, ${userName}!`,
-      );
-      break;
+      return falseAnswer(yourAnswer, isEven);
     }
   }
   console.log(`Congratulations, ${userName}!`);

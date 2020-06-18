@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 
 import {
-  userName, random,
+  userName, random, falseAnswer,
 } from '../src/index.js';
 
 const greatestCommonDivisor = (num1, num2) => {
@@ -26,11 +26,7 @@ const gcd = () => {
     if (+yourAnswer === +commonDivisor) {
       console.log('Correct!');
     } else {
-      console.log(
-        `"${yourAnswer}" is wrong answer ;(. Correct answer was "${commonDivisor}".
-          Let's try again, ${userName}!`,
-      );
-      break;
+      return falseAnswer(yourAnswer, commonDivisor);
     }
   }
   console.log(`Congratulations, ${userName}!`);

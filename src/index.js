@@ -10,6 +10,13 @@ const greeting = () => {
 
 const random = (min, max) => Math.ceil(Math.random() * (max - min) + min);
 
+const falseAnswer = (userAnswer, trueAnswer) => {
+  console.log(
+    `"${userAnswer}" is wrong answer ;(. Correct answer was "${trueAnswer}".
+  Let's try again, ${userName}!`,
+  );
+};
+
 export {
-  userName, greeting, random,
+  userName, greeting, random, falseAnswer,
 };

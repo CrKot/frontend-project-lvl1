@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 
 import {
-  random, userName,
+  random, userName, falseAnswer,
 } from '../src/index.js';
 
 const operatorArrays = ['+', '-', '*'];
@@ -41,11 +41,7 @@ const calculate = () => {
     if (+yourAnswer === +resultExpression) {
       console.log('Correct!');
     } else {
-      console.log(
-        `"${yourAnswer}" is wrong answer ;(. Correct answer was "${resultExpression}".
-      Let's try again, ${userName}!`,
-      );
-      break;
+      return falseAnswer(yourAnswer, resultExpression);
     }
   }
   console.log(`Congratulations, ${userName}!`);
