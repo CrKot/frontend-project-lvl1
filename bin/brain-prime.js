@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import prime from '../games/brain-prime.js';
+import prime from '../games/prime.js';
 
 import { greeting } from '../src/index.js';
 
