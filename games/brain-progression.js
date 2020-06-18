@@ -1,8 +1,41 @@
-#!/usr/bin/env node
+import readlineSync from 'readline-sync';
 
-import finishTheProgression from '../src/progression.js';
+import {
+  userName, random,
+} from '../src/index.js';
 
-import { greeting, userName } from '../src/index.js';
+const randomArithmeticProgression = () => {
+  const n = random(0, 100);
+  const d = random(2, 30);
+  const arithmeticArrays = [n];
+  for (let i = 0; i < 9; i += 1) {
+    const lastNumber = arithmeticArrays.length - 1;
+    const nextNumber = +arithmeticArrays[lastNumber] + d;
+    arithmeticArrays.push(nextNumber);
+  }
+  return arithmeticArrays;
+};
 
-greeting();
-finishTheProgression(userName);
+const finishTheProgression = () => {
+  console.log('What number is missing in the progression?');
+  for (let i = 0; i < 3; i += 1) {
+    const progression = randomArithmeticProgression();
+    const hideNumber = random(0, 9);
+    const invisiblNumber = [];
+    invisiblNumber.push(progression[hideNumber]);
+    progression[hideNumber] = '..';
+    console.log(`Question: ${progression.join(' ')}`);
+    const yourAnswer = readlineSync.question('Your answer: ');
+    if (+yourAnswer === +invisiblNumber) {
+      console.log('Correct!');
+    } else {
+      return console.log(
+        `"${yourAnswer}" is wrong answer ;(. Correct answer was "${invisiblNumber}".
+              Let's try again, ${userName}!`,
+      );
+    }
+  }
+  return console.log(`Congratulations, ${userName}!`);
+};
+
+export default finishTheProgression;

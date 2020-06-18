@@ -4,6 +4,8 @@
 
 ![Node CI](https://github.com/CrKot/frontend-project-lvl1/workflows/Node%20CI/badge.svg)
 
+[![asciicast](https://asciinema.org/a/rdIIzZUhYI0FRDVaHXTLaSbUi.svg)](https://asciinema.org/a/rdIIzZUhYI0FRDVaHXTLaSbUi)
+
 [![asciicast](https://asciinema.org/a/xRmjM8l3DElmyUgs6vt7Q5NyL.svg)](https://asciinema.org/a/xRmjM8l3DElmyUgs6vt7Q5NyL)
 
 
