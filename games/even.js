@@ -4,11 +4,15 @@ import {
   random, userName,
 } from '../src/index.js';
 
+const checkForEven = (num) => {
+  return num % 2 === 0 ? 'yes' : 'no';
+};
+
 const evenOrNotEven = () => {
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
   for (let i = 0; i < 3; i += 1) {
     const num = random(0, 100);
-    const isEven = num % 2 === 0 ? 'yes' : 'no';
+    const isEven = checkForEven(num);
     console.log(`Question: ${num}`);
     const yourAnswer = readlineSync.question('Your answer: ');
     if (isEven === yourAnswer) {
