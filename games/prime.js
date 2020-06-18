@@ -26,7 +26,7 @@ const prime = () => {
       return falseAnswer(yourAnswer, isPrime);
     }
   }
-  console.log(`Congratulations, ${userName}!`);
+  return console.log(`Congratulations, ${userName}!`);
 };
 
 export default prime;

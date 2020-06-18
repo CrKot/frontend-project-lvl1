@@ -32,7 +32,7 @@ const finishTheProgression = () => {
       return falseAnswer(yourAnswer, invisiblNumber);
     }
   }
-  console.log(`Congratulations, ${userName}!`);
+  return console.log(`Congratulations, ${userName}!`);
 };
 
 export default finishTheProgression;

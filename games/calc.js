@@ -44,7 +44,7 @@ const calculate = () => {
       return falseAnswer(yourAnswer, resultExpression);
     }
   }
-  console.log(`Congratulations, ${userName}!`);
+  return console.log(`Congratulations, ${userName}!`);
 };
 
 export default calculate;

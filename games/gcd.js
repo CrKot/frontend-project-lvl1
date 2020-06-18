@@ -29,7 +29,7 @@ const gcd = () => {
       return falseAnswer(yourAnswer, commonDivisor);
     }
   }
-  console.log(`Congratulations, ${userName}!`);
+  return console.log(`Congratulations, ${userName}!`);
 };
 
 export default gcd;

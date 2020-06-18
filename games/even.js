@@ -17,7 +17,7 @@ const evenOrNotEven = () => {
       return falseAnswer(yourAnswer, isEven);
     }
   }
-  console.log(`Congratulations, ${userName}!`);
+  return console.log(`Congratulations, ${userName}!`);
 };
 
 export default evenOrNotEven;
