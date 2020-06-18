@@ -5,7 +5,8 @@ import {
 } from '../src/index.js';
 
 const checkForEven = (num) => {
-  return num % 2 === 0 ? 'yes' : 'no';
+  const result = num % 2 === 0 ? 'yes' : 'no';
+  return result;
 };
 
 const evenOrNotEven = () => {
