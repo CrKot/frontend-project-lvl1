@@ -16,6 +16,7 @@ const greatestCommonDivisor = (num1, num2) => {
 };
 
 const gcd = () => {
+  console.log('Find the greatest common divisor of given numbers.');
   for (let i = 0; i < 3; i += 1) {
     const num1 = random(10, 50);
     const num2 = random(50, 100);
