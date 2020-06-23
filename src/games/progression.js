@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 
 import {
-  userName, random, falseAnswer,
+  userName, random, falseAnswer, roundsToVictory,
 } from '../index.js';
 
 const randomArithmeticProgression = () => {
@@ -18,7 +18,7 @@ const randomArithmeticProgression = () => {
 
 const finishTheProgression = () => {
   console.log('What number is missing in the progression?');
-  for (let i = 0; i < 3; i += 1) {
+  for (let i = 1; i <= roundsToVictory; i += 1) {
     const progression = randomArithmeticProgression();
     const hideNumber = random(0, 9);
     const invisiblNumber = [];

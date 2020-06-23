@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 
 import {
-  userName, random, falseAnswer,
+  userName, random, falseAnswer, roundsToVictory,
 } from '../index.js';
 
 const greatestCommonDivisor = (num1, num2) => {
@@ -17,7 +17,7 @@ const greatestCommonDivisor = (num1, num2) => {
 
 const gcd = () => {
   console.log('Find the greatest common divisor of given numbers.');
-  for (let i = 0; i < 3; i += 1) {
+  for (let i = 1; i <= roundsToVictory; i += 1) {
     const num1 = random(10, 50);
     const num2 = random(50, 100);
     const commonDivisor = greatestCommonDivisor(num1, num2);

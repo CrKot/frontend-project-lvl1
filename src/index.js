@@ -17,6 +17,9 @@ const falseAnswer = (userAnswer, trueAnswer) => {
   );
 };
 
+const roundsToVictory = 3;
+
 export {
   userName, greeting, random, falseAnswer,
+  roundsToVictory,
 };
