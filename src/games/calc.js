@@ -2,6 +2,7 @@ import readlineSync from 'readline-sync';
 
 import {
   random, userName, falseAnswer, roundsToVictory,
+  greeting,
 } from '../index.js';
 
 const operatorArrays = ['+', '-', '*'];
@@ -29,9 +30,11 @@ const calculateExpression = (num1, num2, operator) => {
   return result;
 };
 
+greeting();
+
 const calculate = () => {
   console.log('What is the result of the expression?');
-  for (let i = 1; i <= roundsToVictory; i += 1) {
+  for (let round = 1; round <= roundsToVictory; round += 1) {
     const num1 = random(0, 30);
     const num2 = random(0, 30);
     const operator = randomOperator();
