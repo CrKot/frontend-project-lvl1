@@ -7,10 +7,10 @@ import {
 const isPrimeNumber = (num) => {
   for (let i = 2; i < num; i += 1) {
     if (num % i === 0) {
-      return 'no';
+      return false;
     }
   }
-  return 'yes';
+  return true;
 };
 
 const prime = () => {
@@ -18,12 +18,13 @@ const prime = () => {
   for (let i = 0; i < 3; i += 1) {
     const number = random(1, 500);
     const isPrime = isPrimeNumber(number);
+    const trueAnswer = isPrime ? 'yes' : 'no';
     console.log(`Question: ${number}`);
     const yourAnswer = readlineSync.question('Your answer: ');
-    if (yourAnswer === isPrime) {
+    if (yourAnswer === trueAnswer) {
       console.log('Correct!');
     } else {
-      return falseAnswer(yourAnswer, isPrime);
+      return falseAnswer(yourAnswer, trueAnswer);
     }
   }
   return console.log(`Congratulations, ${userName}!`);
