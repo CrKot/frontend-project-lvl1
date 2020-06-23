@@ -2,7 +2,7 @@ import readlineSync from 'readline-sync';
 
 import {
   userName, random, falseAnswer,
-} from '../src/index.js';
+} from '../index.js';
 
 const isPrimeNumber = (num) => {
   for (let i = 2; i < num; i += 1) {

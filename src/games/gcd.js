@@ -2,7 +2,7 @@ import readlineSync from 'readline-sync';
 
 import {
   userName, random, falseAnswer,
-} from '../src/index.js';
+} from '../index.js';
 
 const greatestCommonDivisor = (num1, num2) => {
   let divisor = Math.min(num1, num2);

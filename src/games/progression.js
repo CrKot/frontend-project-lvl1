@@ -2,7 +2,7 @@ import readlineSync from 'readline-sync';
 
 import {
   userName, random, falseAnswer,
-} from '../src/index.js';
+} from '../index.js';
 
 const randomArithmeticProgression = () => {
   const n = random(0, 100);

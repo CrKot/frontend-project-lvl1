@@ -2,7 +2,7 @@ import readlineSync from 'readline-sync';
 
 import {
   random, userName, falseAnswer,
-} from '../src/index.js';
+} from '../index.js';
 
 const isEven = (num) => (num % 2 === 0 ? 'yes' : 'no');
 
