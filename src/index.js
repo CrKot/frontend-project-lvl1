@@ -12,16 +12,14 @@ const greeting = () => {
 
 const random = (min, max) => Math.ceil(Math.random() * (max - min) + min);
 
-const falseAnswer = (userAnswer, trueAnswer) => {
-  console.log(
-    `"${userAnswer}" is wrong answer ;(. Correct answer was "${trueAnswer}".
-  Let's try again, ${userName}!`,
-  );
-};
+const falseAnswer = (userAnswer, trueAnswer) => `"${userAnswer}" is wrong answer ;(. Correct answer was "${trueAnswer}".
+  Let's try again, ${userName}!`;
+
+const messages = (text) => console.log(text);
 
 const roundsToVictory = 3;
 
 export {
   userName, greeting, random, falseAnswer,
-  roundsToVictory,
+  roundsToVictory, messages,
 };

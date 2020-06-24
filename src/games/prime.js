@@ -2,7 +2,7 @@ import readlineSync from 'readline-sync';
 
 import {
   userName, random, falseAnswer, roundsToVictory,
-  greeting,
+  greeting, messages,
 } from '../index.js';
 
 const isPrimeNumber = (num) => {
@@ -17,19 +17,19 @@ const isPrimeNumber = (num) => {
 greeting();
 
 const prime = () => {
-  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
+  messages('Answer "yes" if given number is prime. Otherwise answer "no".');
   for (let round = 1; round <= roundsToVictory; round += 1) {
     const number = random(1, 500);
     const isPrime = isPrimeNumber(number) ? 'yes' : 'no';
-    console.log(`Question: ${number}`);
+    messages(`Question: ${number}`);
     const yourAnswer = readlineSync.question('Your answer: ');
     if (yourAnswer === isPrime) {
-      console.log('Correct!');
+      messages('Correct!');
     } else {
-      return falseAnswer(yourAnswer, isPrime);
+      return messages(falseAnswer(yourAnswer, isPrime));
     }
   }
-  return console.log(`Congratulations, ${userName}!`);
+  return messages(`Congratulations, ${userName}!`);
 };
 
 export default prime;

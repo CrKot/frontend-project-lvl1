@@ -2,7 +2,7 @@ import readlineSync from 'readline-sync';
 
 import {
   userName, random, falseAnswer, roundsToVictory,
-  greeting,
+  greeting, messages,
 } from '../index.js';
 
 const randomArithmeticProgression = () => {
@@ -20,22 +20,22 @@ const randomArithmeticProgression = () => {
 greeting();
 
 const finishTheProgression = () => {
-  console.log('What number is missing in the progression?');
+  messages('What number is missing in the progression?');
   for (let round = 1; round <= roundsToVictory; round += 1) {
     const progression = randomArithmeticProgression();
     const hideNumber = random(0, 9);
     const invisiblNumber = [];
     invisiblNumber.push(progression[hideNumber]);
     progression[hideNumber] = '..';
-    console.log(`Question: ${progression.join(' ')}`);
+    messages(`Question: ${progression.join(' ')}`);
     const yourAnswer = readlineSync.question('Your answer: ');
     if (+yourAnswer === +invisiblNumber) {
-      console.log('Correct!');
+      messages('Correct!');
     } else {
-      return falseAnswer(yourAnswer, invisiblNumber);
+      return messages(falseAnswer(yourAnswer, invisiblNumber));
     }
   }
-  return console.log(`Congratulations, ${userName}!`);
+  return messages(`Congratulations, ${userName}!`);
 };
 
 export default finishTheProgression;
