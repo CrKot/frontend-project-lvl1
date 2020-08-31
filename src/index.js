@@ -24,7 +24,7 @@ const gameEngine = (questions, gameData) => {
     if (yourAnswer === trueAnwer) {
       console.log('Correct!');
     } else {
-      return console.log(`"${yourAnswer}" is wrong answer ;(. Correct answer was "${gameData[2]}".
+      return console.log(`"${yourAnswer}" is wrong answer ;(. Correct answer was "${trueAnwer}".
       Let's try again, ${userName}!`);
     }
   }
