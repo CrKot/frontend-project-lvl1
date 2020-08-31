@@ -1,9 +1,6 @@
-import readlineSync from 'readline-sync';
+import gameEngine from '../index.js';
 
-import {
-  random, userName, falseAnswer, roundsToVictory,
-  greeting, messages,
-} from '../index.js';
+import { random } from '../cli.js';
 
 const operatorArrays = ['+', '-', '*'];
 const randomOperator = () => {
@@ -30,24 +27,22 @@ const calculateExpression = (num1, num2, operator) => {
   return result;
 };
 
-greeting();
-
-const calculate = () => {
-  messages('What is the result of the expression?');
-  for (let round = 1; round <= roundsToVictory; round += 1) {
-    const num1 = random(0, 30);
-    const num2 = random(0, 30);
-    const operator = randomOperator();
-    const resultExpression = calculateExpression(num1, num2, operator);
-    messages(`Question: ${num1} ${operator} ${num2}`);
-    const yourAnswer = readlineSync.question('Your answer: ');
-    if (+yourAnswer === +resultExpression) {
-      messages('Correct!');
-    } else {
-      return messages(falseAnswer(yourAnswer, resultExpression));
-    }
-  }
-  return messages(`Congratulations, ${userName}!`);
+const numberRandom = () => {
+  const number = random(0, 30);
+  return number;
 };
 
-export default calculate;
+const questions = 'What is the result of the expression?';
+
+const gameData = () => {
+  const num1 = numberRandom();
+  const num2 = numberRandom();
+  const operator = randomOperator();
+  const messageGame = `Question: ${num1} ${operator} ${num2}`;
+  const trueAnswer = String(calculateExpression(num1, num2, operator));
+  return [messageGame, trueAnswer];
+};
+
+const runGame = () => gameEngine(questions, gameData);
+
+export default runGame;

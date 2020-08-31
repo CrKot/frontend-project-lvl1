@@ -1,9 +1,6 @@
-import readlineSync from 'readline-sync';
+import gameEngine from '../index.js';
 
-import {
-  userName, random, falseAnswer, roundsToVictory,
-  greeting, messages,
-} from '../index.js';
+import { random } from '../cli.js';
 
 const greatestCommonDivisor = (num1, num2) => {
   let divisor = Math.min(num1, num2);
@@ -16,23 +13,16 @@ const greatestCommonDivisor = (num1, num2) => {
   return divisor;
 };
 
-greeting();
+const questions = 'Find the greatest common divisor of given numbers.';
 
-const gcd = () => {
-  messages('Find the greatest common divisor of given numbers.');
-  for (let round = 1; round <= roundsToVictory; round += 1) {
-    const num1 = random(10, 50);
-    const num2 = random(50, 100);
-    const commonDivisor = greatestCommonDivisor(num1, num2);
-    messages(`Question: ${num1} ${num2}`);
-    const yourAnswer = readlineSync.question('Your answer: ');
-    if (+yourAnswer === +commonDivisor) {
-      messages('Correct!');
-    } else {
-      return messages(falseAnswer(yourAnswer, commonDivisor));
-    }
-  }
-  return messages(`Congratulations, ${userName}!`);
+const gameData = () => {
+  const num1 = random(10, 50);
+  const num2 = random(50, 100);
+  const messageGame = `Question: ${num1} ${num2}`;
+  const trueAnswer = greatestCommonDivisor(num1, num2);
+  return [messageGame, trueAnswer];
 };
 
-export default gcd;
+const runGame = () => gameEngine(questions, gameData);
+
+export default runGame;

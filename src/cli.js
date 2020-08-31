@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
 
-const getName = () => readlineSync.question('May I have your name? ');
+export const getName = () => readlineSync.question('May I have your name? ');
 
-export default getName;
+export const random = (min, max) => Math.ceil(Math.random() * (max - min) + min);

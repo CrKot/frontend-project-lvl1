@@ -2,7 +2,7 @@ import readlineSync from 'readline-sync';
 
 const userName = [];
 
-const greeting = () => {
+export const greeting = () => {
   if (userName.length === 0) {
     console.log('Welcome to the Brain Games');
     userName.push(readlineSync.question('May I have your name? '));
@@ -10,16 +10,25 @@ const greeting = () => {
   }
 };
 
-const random = (min, max) => Math.ceil(Math.random() * (max - min) + min);
-
-const falseAnswer = (userAnswer, trueAnswer) => `"${userAnswer}" is wrong answer ;(. Correct answer was "${trueAnswer}".
-  Let's try again, ${userName}!`;
-
-const messages = (text) => console.log(text);
-
 const roundsToVictory = 3;
 
-export {
-  userName, greeting, random, falseAnswer,
-  roundsToVictory, messages,
+const gameEngine = (questions, gameData) => {
+  if (userName.length === 0) {
+    greeting();
+  }
+  console.log(questions);
+  for (let round = 1; round <= roundsToVictory; round += 1) {
+    const [message, trueAnwer] = gameData();
+    console.log(message);
+    const yourAnswer = readlineSync.question('Your answer: ');
+    if (yourAnswer === trueAnwer) {
+      console.log('Correct!');
+    } else {
+      return console.log(`"${yourAnswer}" is wrong answer ;(. Correct answer was "${gameData[2]}".
+      Let's try again, ${userName}!`);
+    }
+  }
+  return console.log(`Congratulations, ${userName}!`);
 };
+
+export default gameEngine;

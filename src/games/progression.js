@@ -1,12 +1,9 @@
-import readlineSync from 'readline-sync';
+import gameEngine from '../index.js';
 
-import {
-  userName, random, falseAnswer, roundsToVictory,
-  greeting, messages,
-} from '../index.js';
+import { random } from '../cli.js';
 
 const randomArithmeticProgression = () => {
-  const n = random(0, 100);
+  const n = random(0, 30);
   const d = random(2, 30);
   const arithmeticArrays = [n];
   for (let i = 0; i < 9; i += 1) {
@@ -17,25 +14,17 @@ const randomArithmeticProgression = () => {
   return arithmeticArrays;
 };
 
-greeting();
+const questions = 'What number is missing in the progression?';
 
-const finishTheProgression = () => {
-  messages('What number is missing in the progression?');
-  for (let round = 1; round <= roundsToVictory; round += 1) {
-    const progression = randomArithmeticProgression();
-    const hideNumber = random(0, 9);
-    const invisiblNumber = [];
-    invisiblNumber.push(progression[hideNumber]);
-    progression[hideNumber] = '..';
-    messages(`Question: ${progression.join(' ')}`);
-    const yourAnswer = readlineSync.question('Your answer: ');
-    if (+yourAnswer === +invisiblNumber) {
-      messages('Correct!');
-    } else {
-      return messages(falseAnswer(yourAnswer, invisiblNumber));
-    }
-  }
-  return messages(`Congratulations, ${userName}!`);
+const gameData = () => {
+  const progression = randomArithmeticProgression();
+  const hideNumber = random(0, 9);
+  const trueAnswer = String(progression[hideNumber]);
+  progression[hideNumber] = '..';
+  const messageGame = `Question: ${progression.join(' ')}`;
+  return [messageGame, trueAnswer];
 };
 
-export default finishTheProgression;
+const runGame = () => gameEngine(questions, gameData);
+
+export default runGame;
