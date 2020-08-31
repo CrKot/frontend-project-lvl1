@@ -27,16 +27,11 @@ const calculateExpression = (num1, num2, operator) => {
   return result;
 };
 
-const numberRandom = () => {
-  const number = random(0, 30);
-  return number;
-};
-
 const questions = 'What is the result of the expression?';
 
 const gameData = () => {
-  const num1 = numberRandom();
-  const num2 = numberRandom();
+  const num1 = random(0, 30);
+  const num2 = random(0, 30);
   const operator = randomOperator();
   const messageGame = `Question: ${num1} ${operator} ${num2}`;
   const trueAnswer = String(calculateExpression(num1, num2, operator));
