@@ -1,16 +1,15 @@
 import gameEngine from '../index.js';
 
-import { random } from '../cli.js';
+import getRandomNumber from '../cli.js';
 
-const operatorArrays = ['+', '-', '*'];
-const randomOperator = () => {
-  const num = random(0, 2);
-  const operatorIsArray = operatorArrays[num];
-  return operatorIsArray;
+const operators = ['+', '-', '*'];
+const getRandomOperator = () => {
+  const num = getRandomNumber(0, operators.length - 1);
+  return operators[num];
 };
 
 const calculateExpression = (num1, num2, operator) => {
-  let result = 0;
+  let result;
   switch (operator) {
     case '+':
       result = num1 + num2;
@@ -27,17 +26,17 @@ const calculateExpression = (num1, num2, operator) => {
   return result;
 };
 
-const questions = 'What is the result of the expression?';
+const descriptionGame = 'What is the result of the expression?';
 
-const gameData = () => {
-  const num1 = random(0, 30);
-  const num2 = random(0, 30);
-  const operator = randomOperator();
-  const messageGame = `Question: ${num1} ${operator} ${num2}`;
+const getDataGame = () => {
+  const num1 = getRandomNumber(0, 30);
+  const num2 = getRandomNumber(0, 30);
+  const operator = getRandomOperator();
+  const messageToPlayer = `${num1} ${operator} ${num2}`;
   const trueAnswer = String(calculateExpression(num1, num2, operator));
-  return [messageGame, trueAnswer];
+  return [messageToPlayer, trueAnswer];
 };
 
-const runGame = () => gameEngine(questions, gameData);
+const runGame = () => gameEngine(descriptionGame, getDataGame);
 
 export default runGame;

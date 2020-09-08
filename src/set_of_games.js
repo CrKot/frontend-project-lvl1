@@ -1,14 +1,14 @@
-import isEven from './games/even.js';
+import brainEvenGame from './games/even.js';
 
-import calculate from './games/calc.js';
+import brainCalcGame from './games/calc.js';
 
-import gcd from './games/gcd.js';
+import brainGcdGame from './games/gcd.js';
 
-import prime from './games/prime.js';
+import brainPrimeGame from './games/prime.js';
 
-import finishTheProgression from './games/progression.js';
+import brainProgressionGame from './games/progression.js';
 
 export {
-  isEven, calculate, gcd, prime,
-  finishTheProgression,
+  brainEvenGame, brainCalcGame, brainGcdGame, brainPrimeGame,
+  brainProgressionGame,
 };

@@ -1,30 +1,31 @@
 import gameEngine from '../index.js';
 
-import { random } from '../cli.js';
+import getRandomNumber from '../cli.js';
 
-const randomArithmeticProgression = () => {
-  const n = random(0, 30);
-  const d = random(2, 30);
-  const arithmeticArrays = [n];
-  for (let i = 0; i < 9; i += 1) {
-    const lastNumber = arithmeticArrays.length - 1;
-    const nextNumber = +arithmeticArrays[lastNumber] + d;
-    arithmeticArrays.push(nextNumber);
+const getProgression = (start, step, length) => {
+  const arithmeticProgression = [start];
+  for (let i = 0; i < length; i += 1) {
+    const lastNumber = arithmeticProgression.length - 1;
+    const nextNumber = +arithmeticProgression[lastNumber] + step;
+    arithmeticProgression.push(nextNumber);
   }
-  return arithmeticArrays;
+  return arithmeticProgression;
 };
 
-const questions = 'What number is missing in the progression?';
+const descriptionGame = 'What number is missing in the progression?';
 
-const gameData = () => {
-  const progression = randomArithmeticProgression();
-  const hideNumber = random(0, 9);
+const getDataGame = () => {
+  const startProgression = getRandomNumber(0, 30);
+  const step = getRandomNumber(2, 30);
+  const setLengthProgrerssion = 10;
+  const progression = getProgression(startProgression, step, setLengthProgrerssion);
+  const hideNumber = getRandomNumber(0, 9);
   const trueAnswer = String(progression[hideNumber]);
   progression[hideNumber] = '..';
-  const messageGame = `Question: ${progression.join(' ')}`;
-  return [messageGame, trueAnswer];
+  const messageToPlayer = `${progression.join(' ')}`;
+  return [messageToPlayer, trueAnswer];
 };
 
-const runGame = () => gameEngine(questions, gameData);
+const runGame = () => gameEngine(descriptionGame, getDataGame);
 
 export default runGame;

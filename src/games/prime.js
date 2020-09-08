@@ -1,9 +1,12 @@
 import gameEngine from '../index.js';
 
-import { random } from '../cli.js';
+import getRandomNumber from '../cli.js';
 
 const isPrimeNumber = (num) => {
-  for (let i = 2; i < num; i += 1) {
+  if (num <= 1) {
+    return false;
+  }
+  for (let i = 2; i <= num / 2; i += 1) {
     if (num % i === 0) {
       return false;
     }
@@ -11,15 +14,15 @@ const isPrimeNumber = (num) => {
   return true;
 };
 
-const questions = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const descriptionGame = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const gameData = () => {
-  const number = random(1, 500);
-  const messageGame = `Question: ${number}`;
+const getDataGame = () => {
+  const number = getRandomNumber(1, 500);
+  const messageToPlayer = number;
   const trueAnswer = isPrimeNumber(number) ? 'yes' : 'no';
-  return [questions, messageGame, trueAnswer];
+  return [messageToPlayer, trueAnswer];
 };
 
-const runGame = () => gameEngine(questions, gameData);
+const runGame = () => gameEngine(descriptionGame, getDataGame);
 
 export default runGame;

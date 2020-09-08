@@ -1,18 +1,18 @@
 import gameEngine from '../index.js';
 
-import { random } from '../cli.js';
+import getRandomNumber from '../cli.js';
 
 const isEven = (num) => (num % 2 === 0);
 
-const questions = 'Answer "yes" if the number is even, otherwise answer "no".';
+const descriptionGame = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const gameData = () => {
-  const num = random(0, 100);
-  const messageGame = `Question: ${num}`;
+const getDataGame = () => {
+  const num = getRandomNumber(0, 100);
+  const messageToPlayer = `${num}`;
   const trueAnswer = (isEven(num)) ? 'yes' : 'no';
-  return [messageGame, trueAnswer];
+  return [messageToPlayer, trueAnswer];
 };
 
-const runGame = () => gameEngine(questions, gameData);
+const runGame = () => gameEngine(descriptionGame, getDataGame);
 
 export default runGame;

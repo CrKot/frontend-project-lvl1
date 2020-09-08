@@ -12,23 +12,24 @@ export const greeting = () => {
 
 const roundsToVictory = 3;
 
-const gameEngine = (questions, gameData) => {
+const gameEngine = (descriptionGame, gameData) => {
   if (userName.length === 0) {
     greeting();
   }
-  console.log(questions);
+  console.log(descriptionGame);
   for (let round = 1; round <= roundsToVictory; round += 1) {
-    const [message, trueAnwer] = gameData();
-    console.log(message);
+    const [messageToPlayer, trueAnswer] = gameData();
+    console.log(`Question: ${messageToPlayer}`);
     const yourAnswer = readlineSync.question('Your answer: ');
-    if (yourAnswer === trueAnwer) {
+    if (yourAnswer === trueAnswer) {
       console.log('Correct!');
     } else {
-      return console.log(`"${yourAnswer}" is wrong answer ;(. Correct answer was "${trueAnwer}".
+      console.log(`"${yourAnswer}" is wrong answer ;(. Correct answer was "${trueAnswer}".
       Let's try again, ${userName}!`);
+      return;
     }
   }
-  return console.log(`Congratulations, ${userName}!`);
+  console.log(`Congratulations, ${userName}!`);
 };
 
 export default gameEngine;
