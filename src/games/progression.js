@@ -1,31 +1,29 @@
 import gameEngine from '../index.js';
 
-import getRandomNumber from '../cli.js';
+import getRandomNumber from '../getRandom.js';
 
 const getProgression = (start, step, length) => {
-  const arithmeticProgression = [start];
+  const arithmeticProgression = [];
   for (let i = 0; i < length; i += 1) {
-    const lastNumber = arithmeticProgression.length - 1;
-    const nextNumber = +arithmeticProgression[lastNumber] + step;
-    arithmeticProgression.push(nextNumber);
+    arithmeticProgression.push(start + step * i);
   }
   return arithmeticProgression;
 };
 
-const descriptionGame = 'What number is missing in the progression?';
+const gameDescription = 'What number is missing in the progression?';
 
 const getDataGame = () => {
   const startProgression = getRandomNumber(0, 30);
   const step = getRandomNumber(2, 30);
   const setLengthProgrerssion = 10;
   const progression = getProgression(startProgression, step, setLengthProgrerssion);
-  const hideNumber = getRandomNumber(0, 9);
-  const trueAnswer = String(progression[hideNumber]);
+  const hideNumber = getRandomNumber(0, setLengthProgrerssion - 1);
+  const correctAnswer = String(progression[hideNumber]);
   progression[hideNumber] = '..';
-  const messageToPlayer = `${progression.join(' ')}`;
-  return [messageToPlayer, trueAnswer];
+  const gameQuestion = progression.join(' ');
+  return [gameQuestion, correctAnswer];
 };
 
-const runGame = () => gameEngine(descriptionGame, getDataGame);
+const runGame = () => gameEngine(gameDescription, getDataGame);
 
 export default runGame;

@@ -1,11 +1,11 @@
 import gameEngine from '../index.js';
 
-import getRandomNumber from '../cli.js';
+import getRandomNumber from '../getRandom.js';
 
 const operators = ['+', '-', '*'];
 const getRandomOperator = () => {
-  const num = getRandomNumber(0, operators.length - 1);
-  return operators[num];
+  const index = getRandomNumber(0, operators.length - 1);
+  return operators[index];
 };
 
 const calculateExpression = (num1, num2, operator) => {
@@ -26,17 +26,17 @@ const calculateExpression = (num1, num2, operator) => {
   return result;
 };
 
-const descriptionGame = 'What is the result of the expression?';
+const gameDescription = 'What is the result of the expression?';
 
 const getDataGame = () => {
   const num1 = getRandomNumber(0, 30);
   const num2 = getRandomNumber(0, 30);
   const operator = getRandomOperator();
-  const messageToPlayer = `${num1} ${operator} ${num2}`;
-  const trueAnswer = String(calculateExpression(num1, num2, operator));
-  return [messageToPlayer, trueAnswer];
+  const gameQuestion = `${num1} ${operator} ${num2}`;
+  const correctAnswer = String(calculateExpression(num1, num2, operator));
+  return [gameQuestion, correctAnswer];
 };
 
-const runGame = () => gameEngine(descriptionGame, getDataGame);
+const runGame = () => gameEngine(gameDescription, getDataGame);
 
 export default runGame;
