@@ -1,8 +1,15 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/1e427ead1e43dc576dbe/maintainability)](https://codeclimate.com/github/CrKot/frontend-project-lvl1/maintainability)
 
-[![Test Coverage](https://api.codeclimate.com/v1/badges/1e427ead1e43dc576dbe/test_coverage)](https://codeclimate.com/github/CrKot/frontend-project-lvl1/test_coverage)
-
 ![Node CI](https://github.com/CrKot/frontend-project-lvl1/workflows/Node%20CI/badge.svg)
+
+Brain-games коллекция игр для легкой разминки мозга. Приложение включает в себя 5 игр:
+Команда для установки приложения npm install frontend-project-lvl1.
+Команды для запуска игр:
+1. Brain-calc - Необходимо вычислить сумму выражения.
+2. Brain-prime - необходимо вычислить простое это число или составное.
+3. Brain-gcd - Необходимо вычислить наибольший общий делитель двух чисел.
+4. Brain-progression - Необходимо вычислить скрытое число арифметической прогрессии.
+5. Brain-even - Необходимо указать четное ли это число или нечетное.
 
 [![asciicast](https://asciinema.org/a/L60X5GQ5r9FkD1iLAbzGzQnxo.svg)](https://asciinema.org/a/L60X5GQ5r9FkD1iLAbzGzQnxo)
 
