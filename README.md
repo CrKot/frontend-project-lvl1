@@ -11,10 +11,7 @@ Brain-games коллекция игр для легкой разминки мо�
 4. Brain-progression - Необходимо вычислить скрытое число арифметической прогрессии.
 5. Brain-even - Необходимо указать четное ли это число или нечетное.
 
-[![asciicast](https://asciinema.org/a/L60X5GQ5r9FkD1iLAbzGzQnxo.svg)](https://asciinema.org/a/L60X5GQ5r9FkD1iLAbzGzQnxo)
-
 [![asciicast](https://asciinema.org/a/xRmjM8l3DElmyUgs6vt7Q5NyL.svg)](https://asciinema.org/a/xRmjM8l3DElmyUgs6vt7Q5NyL)
-
 
 [![asciicast](https://asciinema.org/a/T1hKxWCJEaU4NuIE0cYZV4PG1.svg)](https://asciinema.org/a/T1hKxWCJEaU4NuIE0cYZV4PG1)
 

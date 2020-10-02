@@ -1,6 +1,6 @@
 import gameEngine from '../index.js';
 
-import getRandomNumber from '../getRandom.js';
+import getRandomNumber from '../random.js';
 
 const getProgression = (start, step, length) => {
   const arithmeticProgression = [];
@@ -12,18 +12,18 @@ const getProgression = (start, step, length) => {
 
 const gameDescription = 'What number is missing in the progression?';
 
-const getDataGame = () => {
+const getGameData = () => {
   const startProgression = getRandomNumber(0, 30);
   const step = getRandomNumber(2, 30);
-  const setLengthProgrerssion = 10;
-  const progression = getProgression(startProgression, step, setLengthProgrerssion);
-  const hideNumber = getRandomNumber(0, setLengthProgrerssion - 1);
-  const correctAnswer = String(progression[hideNumber]);
-  progression[hideNumber] = '..';
+  const lengthProgrerssion = 10;
+  const progression = getProgression(startProgression, step, lengthProgrerssion);
+  const hiddenNumber = getRandomNumber(0, lengthProgrerssion - 1);
+  const correctAnswer = String(progression[hiddenNumber]);
+  progression[hiddenNumber] = '..';
   const gameQuestion = progression.join(' ');
   return [gameQuestion, correctAnswer];
 };
 
-const runGame = () => gameEngine(gameDescription, getDataGame);
+const runGame = () => gameEngine(gameDescription, getGameData);
 
 export default runGame;

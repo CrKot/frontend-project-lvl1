@@ -1,6 +1,6 @@
 import gameEngine from '../index.js';
 
-import getRandomNumber from '../getRandom.js';
+import getRandomNumber from '../random.js';
 
 const getGreatestCommonDivisor = (num1, num2) => {
   let divisor = Math.min(num1, num2);
@@ -15,7 +15,7 @@ const getGreatestCommonDivisor = (num1, num2) => {
 
 const gameDescription = 'Find the greatest common divisor of given numbers.';
 
-const getDataGame = () => {
+const getGameData = () => {
   const num1 = getRandomNumber(10, 50);
   const num2 = getRandomNumber(50, 100);
   const gameQuestion = `${num1} ${num2}`;
@@ -23,6 +23,6 @@ const getDataGame = () => {
   return [gameQuestion, correctAnswer];
 };
 
-const runGame = () => gameEngine(gameDescription, getDataGame);
+const runGame = () => gameEngine(gameDescription, getGameData);
 
 export default runGame;

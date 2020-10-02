@@ -1,8 +1,9 @@
 import gameEngine from '../index.js';
 
-import getRandomNumber from '../getRandom.js';
+import getRandomNumber from '../random.js';
 
 const operators = ['+', '-', '*'];
+
 const getRandomOperator = () => {
   const index = getRandomNumber(0, operators.length - 1);
   return operators[index];
@@ -28,7 +29,7 @@ const calculateExpression = (num1, num2, operator) => {
 
 const gameDescription = 'What is the result of the expression?';
 
-const getDataGame = () => {
+const getGameData = () => {
   const num1 = getRandomNumber(0, 30);
   const num2 = getRandomNumber(0, 30);
   const operator = getRandomOperator();
@@ -37,6 +38,6 @@ const getDataGame = () => {
   return [gameQuestion, correctAnswer];
 };
 
-const runGame = () => gameEngine(gameDescription, getDataGame);
+const runGame = () => gameEngine(gameDescription, getGameData);
 
 export default runGame;
