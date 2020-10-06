@@ -16,7 +16,7 @@ export default (descriptionGame, getGameData) => {
     } else {
       console.log(`"${playerAnswer}" is wrong answer ;(. Correct answer was "${correctAnswer}".
       Let's try again, ${userName}!`);
-      break;
+      return;
     }
   }
   console.log(`Congratulations, ${userName}!`);
